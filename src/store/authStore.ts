@@ -42,7 +42,7 @@ export const useAuthStore = create<AuthStore>()(
         } catch (error: unknown) {
           const errorMessage =
             (error as any)?.response?.data?.message ||
-            'Неверные учетные данные. Попробуйте еще раз.';
+            'Invalid credentials. Please try again.';
 
           set({
             isLoading: false,
@@ -78,7 +78,6 @@ export const useAuthStore = create<AuthStore>()(
       checkAuth: () => {
         const token = localStorage.getItem('token');
         if (token) {
-          // Можно добавить проверку валидности токена через API
           set({
             token,
             isAuthenticated: true,

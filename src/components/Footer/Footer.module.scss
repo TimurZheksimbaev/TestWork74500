@@ -1,36 +1,37 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
 .footer {
-  background: #333;
-  color: white;
-  padding: 1rem 0;
+  background: $dark;
+  color: $white;
+  padding: $space-md 0;
   margin-top: auto;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  @include container;
   text-align: center;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: $space-sm;
   font-size: 0.875rem;
 
-  @media (min-width: 768px) {
+  @include desktop {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: $space-md;
   }
 }
 
 .year {
-  color: #ccc;
+  color: $light-gray;
 }
 
 .userEmail {
-  color: #007bff;
+  color: $primary;
   font-weight: 500;
 }

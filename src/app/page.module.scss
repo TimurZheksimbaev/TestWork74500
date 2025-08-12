@@ -1,68 +1,97 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
 .page {
-  min-height: calc(100vh - 160px); // Вычитаем примерную высоту header и footer
-  padding: 2rem 1rem;
+  min-height: calc(100vh - 160px);
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  @include container;
 }
 
-.hero {
+.welcomeSection {
+  background: linear-gradient(135deg, $dark 0%, $dark-hover 100%);
+  color: $white;
+  padding: $space-xl 0;
+}
+
+.welcomeMessage {
   text-align: center;
-  margin-bottom: 3rem;
 }
 
-.title {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 2rem;
+.welcomeTitle {
+  font-size: 2rem;
   font-weight: 700;
+  margin-bottom: $space-sm;
 
-  @media (max-width: 768px) {
-    font-size: 2rem;
+  @include mobile {
+    font-size: 1.5rem;
   }
 }
 
-.welcomeMessage,
-.guestMessage {
-  font-size: 1.2rem;
-  color: #666;
+.welcomeText {
+  font-size: 1.125rem;
+  opacity: 0.9;
 
-  p {
-    margin-bottom: 0.5rem;
-  }
-
-  @media (max-width: 768px) {
+  @include mobile {
     font-size: 1rem;
   }
 }
 
-.welcomeMessage {
-  color: #007bff;
+.heroSection {
+  padding: $space-xl 0;
+}
+
+.hero {
+  text-align: center;
+  padding: $space-xl 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: $text-dark;
+  margin-bottom: $space-xl;
+  font-weight: 700;
+
+  @include mobile {
+    font-size: 2rem;
+  }
 }
 
 .guestMessage {
-  color: #6c757d;
+  font-size: 1.2rem;
+  color: $text-muted;
+
+  p {
+    margin-bottom: $space-sm;
+  }
+
+  @include mobile {
+    font-size: 1rem;
+  }
+}
+
+.infoSection {
+  background: $light-gray;
+  padding: $space-xl 0;
 }
 
 .info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: $space-xl;
 
-  @media (max-width: 768px) {
+  @include mobile {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: $space-lg;
   }
 }
 
 .infoCard {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  background: $white;
+  padding: $space-xl;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
   text-align: center;
   transition: transform 0.2s ease;
 
@@ -71,17 +100,17 @@
   }
 
   h3 {
-    margin-bottom: 1rem;
-    color: #333;
+    margin-bottom: $space-md;
+    color: $text-dark;
     font-size: 1.3rem;
   }
 
   p {
-    color: #666;
+    color: $text-muted;
     line-height: 1.6;
   }
 
-  @media (max-width: 768px) {
-    padding: 1.5rem;
+  @include mobile {
+    padding: $space-lg;
   }
 }

@@ -1,10 +1,11 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
 .loginPage {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  background: linear-gradient(135deg, $dark 0%, $dark-hover 100%);
+  @include flex-center;
+  padding: $space-md;
 }
 
 .container {

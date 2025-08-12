@@ -1,21 +1,24 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
 .loginForm {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
   max-width: 400px;
   margin: 0 auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+  padding: $space-xl;
 
-  @media (max-width: 768px) {
-    padding: 1.5rem;
-    margin: 1rem;
+  @include mobile {
+    padding: $space-lg;
+    margin: $space-md;
   }
 }
 
 .title {
   text-align: center;
-  margin-bottom: 2rem;
-  color: #333;
+  margin-bottom: $space-xl;
+  color: $text-dark;
   font-size: 1.5rem;
   font-weight: 600;
 }

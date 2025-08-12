@@ -1,0 +1,30 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.badges {
+  @include flex-between;
+  position: absolute;
+  top: $space-sm;
+  left: $space-sm;
+  right: $space-sm;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.discountBadge {
+  padding: 4px 8px;
+  border-radius: $border-radius;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: $danger;
+  color: $white;
+}
+
+.lowStockBadge {
+  padding: 4px 8px;
+  border-radius: $border-radius;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: #f39c12;
+  color: $white;
+}

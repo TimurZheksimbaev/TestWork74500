@@ -8,11 +8,6 @@ import { FormField, LoadingButton, ErrorMessage } from '@/components/UI';
 import { loginValidationRules } from '@/utils/validationRules';
 import styles from './LoginForm.module.scss';
 
-interface LoginFormData {
-  username: string;
-  password: string;
-}
-
 export const LoginForm: React.FC = () => {
   const { login, isLoading, error, clearError, isAuthenticated } =
     useAuthStore();
@@ -26,10 +21,7 @@ export const LoginForm: React.FC = () => {
     handleBlur,
     validateForm,
     touchAllFields,
-  } = useFormValidation(
-    { username: '', password: '' },
-    loginValidationRules
-  );
+  } = useFormValidation({ username: '', password: '' }, loginValidationRules);
 
   // Очистка серверной ошибки при изменении полей
   const handleFieldChange = (name: string, value: string) => {
@@ -61,16 +53,16 @@ export const LoginForm: React.FC = () => {
 
   return (
     <form className={styles.loginForm} onSubmit={handleSubmit}>
-      <h1 className={styles.title}>Вход в систему</h1>
+      <h1 className={styles.title}>Login to the system</h1>
 
       <ErrorMessage message={error || ''} />
 
       <FormField
-        label="Имя пользователя"
+        label="Username"
         name="username"
         type="text"
         value={values.username}
-        placeholder="Введите имя пользователя"
+        placeholder="Enter your username"
         error={errors.username}
         touched={touched.username}
         disabled={isLoading}
@@ -79,11 +71,11 @@ export const LoginForm: React.FC = () => {
       />
 
       <FormField
-        label="Пароль"
+        label="Password"
         name="password"
         type="password"
         value={values.password}
-        placeholder="Введите пароль"
+        placeholder="Enter your password"
         error={errors.password}
         touched={touched.password}
         disabled={isLoading}
@@ -94,7 +86,7 @@ export const LoginForm: React.FC = () => {
       <LoadingButton
         type="submit"
         isLoading={isLoading}
-        loadingText="Вход..."
+        loadingText="Login..."
         disabled={isLoading}
       >
         Login

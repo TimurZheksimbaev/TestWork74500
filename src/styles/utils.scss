@@ -1,0 +1,11 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+// Basic utilities (только самое необходимое)
+.text-center {
+  text-align: center;
+}
+
+.container {
+  @include container;
+}

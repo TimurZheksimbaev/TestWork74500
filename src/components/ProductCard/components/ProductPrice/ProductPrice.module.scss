@@ -1,0 +1,35 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $primary;
+
+  @include mobile {
+    font-size: 1.125rem;
+  }
+}
+
+.priceDiscounted {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $primary;
+
+  @include mobile {
+    font-size: 1.125rem;
+  }
+}
+
+.priceOriginal {
+  font-size: 0.875rem;
+  color: $text-muted;
+  text-decoration: line-through;
+  font-weight: 500;
+}

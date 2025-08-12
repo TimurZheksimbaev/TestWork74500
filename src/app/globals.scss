@@ -1,3 +1,5 @@
+@import '@/styles/index.scss';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,9 +18,8 @@ body {
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f9fa;
-  color: #333;
-  line-height: 1.6;
+  background-color: $bg-light;
+  color: $text-primary;
 }
 
 a {

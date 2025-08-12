@@ -1,89 +1,80 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
 .header {
-  background: #fff;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
-  padding: 1rem 0;
+  background: $dark;
+  box-shadow: $shadow;
+  padding: $space-md 0;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include container;
+  @include flex-between;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #007bff;
+  color: $white;
   text-decoration: none;
 
   &:hover {
-    color: #0056b3;
+    color: $light-gray;
   }
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: $space-md;
 }
 
 .loginLink {
-  padding: 0.5rem 1rem;
-  background: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+  @include button;
+  background: $primary;
+  color: $white;
+  text-decoration: none;  
 
   &:hover {
-    background: #0056b3;
+    background: $primary-hover;
   }
 }
 
 .userInfo {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: $space-md;
 
-  @media (max-width: 768px) {
+  @include mobile {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: $space-sm;
     align-items: flex-end;
   }
 }
 
 .userName {
   font-weight: 500;
-  color: #333;
+  color: $white;
 
-  @media (max-width: 768px) {
+  @include mobile {
     font-size: 0.875rem;
   }
 }
 
 .logoutButton {
-  padding: 0.5rem 1rem;
-  background: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  @include button;
+  background: $danger;
+  color: $white;
 
   &:hover {
-    background: #c82333;
+    background: darken($danger, 10%);
   }
 
-  @media (max-width: 768px) {
-    padding: 0.375rem 0.75rem;
+  @include mobile {
+    padding: 8px 12px;
     font-size: 0.875rem;
   }
 }

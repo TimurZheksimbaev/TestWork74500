@@ -1,0 +1,104 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.container {
+  @include container;
+  padding-top: $space-xl;
+  padding-bottom: $space-xl;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $space-xl;
+
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: $space-sm;
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
+  }
+
+  .subtitle {
+    color: $text-muted;
+    font-size: 1.125rem;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $space-lg;
+  margin-bottom: $space-xl;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: $space-md;
+  }
+}
+
+.loadingContainer {
+  @include flex-center;
+  min-height: 400px;
+}
+
+.errorContainer {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  text-align: center;
+  padding: $space-xl;
+}
+
+.errorTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $danger;
+  margin-bottom: $space-md;
+}
+
+.errorMessage {
+  color: $text-muted;
+  margin-bottom: $space-lg;
+  line-height: 1.6;
+}
+
+.retryButton {
+  @include button;
+  background: $primary;
+  color: $white;
+
+  &:hover {
+    background: $primary-hover;
+  }
+}
+
+.emptyState {
+  text-align: center;
+  padding: $space-xl;
+  color: $text-muted;
+
+  .emptyIcon {
+    font-size: 2.5rem;
+    margin-bottom: $space-md;
+    color: $light-gray;
+  }
+
+  .emptyTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: $space-sm;
+    color: $text-muted;
+  }
+
+  .emptyMessage {
+    color: $text-muted;
+  }
+}

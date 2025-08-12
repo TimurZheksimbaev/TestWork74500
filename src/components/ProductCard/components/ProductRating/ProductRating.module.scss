@@ -1,0 +1,35 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.rating {
+  @include flex-center;
+  gap: $space-sm;
+  justify-content: flex-start;
+}
+
+.stars {
+  display: flex;
+  gap: 1px;
+}
+
+.star {
+  color: #ffc107;
+  font-size: 0.875rem;
+}
+
+.starHalf {
+  color: #ffc107;
+  font-size: 0.875rem;
+  opacity: 0.6;
+}
+
+.starEmpty {
+  color: $light-gray;
+  font-size: 0.875rem;
+}
+
+.ratingValue {
+  font-size: 0.75rem;
+  color: $text-muted;
+  font-weight: 500;
+}
