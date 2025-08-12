@@ -1,11 +1,12 @@
 'use client';
 
+import { memo, useMemo } from 'react';
 import { useAuthStore } from '@/store/authStore';
 import styles from './Footer.module.scss';
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC = memo(() => {
   const { isAuthenticated, user } = useAuthStore();
-  const currentYear = new Date().getFullYear();
+  const currentYear = useMemo(() => new Date().getFullYear(), []);
 
   return (
     <footer className={styles.footer}>
@@ -19,4 +20,6 @@ export const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = 'Footer';

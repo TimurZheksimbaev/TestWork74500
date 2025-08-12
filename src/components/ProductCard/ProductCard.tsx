@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Product } from '@/types';
 import { useAuthStore } from '@/store/authStore';
 import {
@@ -13,7 +13,7 @@ interface ProductCardProps {
   product: Product;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = memo(({ product }) => {
   const { isAuthenticated } = useAuthStore();
 
   const handleAddToCart = () => {};
@@ -61,4 +61,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       )}
     </div>
   );
-};
+});
+
+ProductCard.displayName = 'ProductCard';

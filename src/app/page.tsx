@@ -18,9 +18,7 @@ export default function Home() {
               <h1 className={styles.welcomeTitle}>
                 Hello, {user.firstName}! 👋
               </h1>
-              <p className={styles.welcomeText}>
-                Welcome to our online store
-              </p>
+              <p className={styles.welcomeText}>Welcome to our online store</p>
             </div>
           </div>
         </div>

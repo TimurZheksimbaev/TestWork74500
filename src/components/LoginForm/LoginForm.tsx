@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/authStore';
 import { useFormValidation } from '@/hooks';
@@ -24,25 +24,31 @@ export const LoginForm: React.FC = () => {
   } = useFormValidation({ username: '', password: '' }, loginValidationRules);
 
   // Очистка серверной ошибки при изменении полей
-  const handleFieldChange = (name: string, value: string) => {
-    handleChange(name, value);
-    if (error) {
-      clearError();
-    }
-  };
+  const handleFieldChange = useCallback(
+    (name: string, value: string) => {
+      handleChange(name, value);
+      if (error) {
+        clearError();
+      }
+    },
+    [handleChange, error, clearError]
+  );
 
   // Обработка отправки формы
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
 
-    touchAllFields();
+      touchAllFields();
 
-    if (!validateForm()) {
-      return;
-    }
+      if (!validateForm()) {
+        return;
+      }
 
-    await login(values);
-  };
+      await login(values);
+    },
+    [touchAllFields, validateForm, login, values]
+  );
 
   // Редирект после успешной авторизации
   useEffect(() => {

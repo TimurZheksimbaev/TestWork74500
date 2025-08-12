@@ -41,8 +41,8 @@ export const useAuthStore = create<AuthStore>()(
           });
         } catch (error: unknown) {
           const errorMessage =
-            (error as any)?.response?.data?.message ||
-            'Invalid credentials. Please try again.';
+            (error as { response?: { data?: { message?: string } } })?.response
+              ?.data?.message || 'Invalid credentials. Please try again.';
 
           set({
             isLoading: false,

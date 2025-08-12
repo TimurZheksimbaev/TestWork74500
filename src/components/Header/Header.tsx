@@ -1,15 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import { memo, useCallback } from 'react';
 import { useAuthStore } from '@/store/authStore';
 import styles from './Header.module.scss';
 
-export const Header: React.FC = () => {
+export const Header: React.FC = memo(() => {
   const { isAuthenticated, user, logout } = useAuthStore();
 
-  const handleLogout = () => {
+  const handleLogout = useCallback(() => {
     logout();
-  };
+  }, [logout]);
 
   return (
     <header className={styles.header}>
@@ -41,4 +42,6 @@ export const Header: React.FC = () => {
       </div>
     </header>
   );
-};
+});
+
+Header.displayName = 'Header';

@@ -23,7 +23,8 @@ export const useProducts = (limit = 12): UseProductsResult => {
       setProducts(response.products);
     } catch (err: unknown) {
       const errorMessage =
-        (err as any)?.response?.data?.message ||
+        (err as { response?: { data?: { message?: string } } })?.response?.data
+          ?.message ||
         'An error occurred while loading products. Please try again later.';
       setError(errorMessage);
       setProducts([]);
