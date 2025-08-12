@@ -47,7 +47,7 @@
 
 ```bash
 # Клонируйте репозиторий
-git clone https://github.com/TimurZheksimbaev/Abelohost-test-task.git
+git clone https://github.com/TimurZheksimbaev/TestWork74500.git
 cd Abelohost-test-task
 
 # Установите зависимости
