@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss"
+  ],
+  "rules": {
+    "font-family-name-quotes": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "value-keyword-case": null,
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "color-hex-length": null,
+    "color-function-alias-notation": null,
+    "custom-property-empty-line-before": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "media-feature-range-notation": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen"
+        ]
+      }
+    ]
+  },
+  "ignoreFiles": ["node_modules/**/*", ".next/**/*", "dist/**/*", "build/**/*"]
+}
